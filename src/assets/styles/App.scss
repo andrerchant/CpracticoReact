@@ -1,6 +1,13 @@
-body{
+@import "./misc/Vars";
+@import "./misc/Media";
+
+body {
     margin: 0;
-    background-color:purple;
-    color:white;
-    padding: 1rem 3rem;
+    font-family: $theme-font;
+    background: linear-gradient(92deg, #9c21bf, #d65decbd);
 }
+  
+* {
+    box-sizing: border-box;
+}
+  
