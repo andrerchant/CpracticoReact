@@ -9,7 +9,9 @@ import Footer from '../components/Footer';
 import '../assets/styles/App.scss';
 
 const App = () => {
-    const [ videos , setVideos ] = useState([]);
+    const [ videos , setVideos ] = useState(
+        {mylist:[], trends:[], originals:[]}
+    );
 
     useEffect( () => {
         fetch('http://localhost:3000/initalState')
@@ -18,34 +20,34 @@ const App = () => {
 
     }, []);
     //start: json-server --watch initialState.json -q &&
-
     console.log(videos);
-
     return(
         <div className="App">
             <Header />
             <Search />
 
-            <CarouselList title="Mi lista">
-                <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
-                    <CarouselItem />
-                    <CarouselItem />
-                </Carousel>
-            </CarouselList>
+            {
+                videos.mylist.length > 0 &&
+                <CarouselList title="Mi lista">
+                    <Carousel>
+                        <CarouselItem />
+                    </Carousel>
+                </CarouselList>
+            }
+
 
             <CarouselList title="Tendencias">
                 <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
+                    {
+                        videos.trends.map( item =>
+                            <CarouselItem key={item.id}{...item} />
+                        )
+                    }
                 </Carousel>
             </CarouselList>
 
             <CarouselList title="Originales">
                 <Carousel>
-                    <CarouselItem />
-                    <CarouselItem />
                     <CarouselItem />
                 </Carousel>
             </CarouselList>
