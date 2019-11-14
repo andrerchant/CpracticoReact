@@ -1,10 +1,8 @@
 import React, {useState,useEffect} from 'react';
-import Header from '../components/Header';
 import Search from '../components/Search';
 import CarouselList from '../components/CarouselList';
 import Carousel from '../components/carousel/Carousel';
 import CarouselItem from '../components/carousel/CarouselItem';
-import Footer from '../components/Footer';
 
 import useInitialState from '../hooks/useInitialState';
 
@@ -19,8 +17,8 @@ const Home = () => {
     console.log(initialState);
 
     return initialState.length === 0 ? <h1>L O A D I N G . . .</h1> : (
-        <div className="App">
-            <Header />
+        <>
+
             <Search />
 
             {
@@ -57,8 +55,7 @@ const Home = () => {
                 </Carousel>
             </CarouselList>
 
-            <Footer />
-        </div>
+        </>
     );
 }
 
