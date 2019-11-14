@@ -12,7 +12,7 @@ import '../assets/styles/App.scss';
 
 const API = 'http://localhost:3000/initalState';
 
-const App = () => {
+const Home = () => {
     //start: json-server --watch initialState.json -q &&
     
     const initialState = useInitialState(API);
@@ -62,4 +62,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default Home;
