@@ -24,16 +24,20 @@
     margin: 0px 0px 0px -14px;
     padding: 0px;
     position: absolute;
-    width: 100px;
-    text-align: right;
+    text-align: center;
+    width: 119px;
   }
   
   .header__menu:hover ul, ul:hover {
       display: block;
+      background: #442c75;
   }
   
   .header__menu li {
-    margin: 10px 0px;
+    padding: 10px 8px;
+    &:hover{
+      background: #694da0;
+    }
   }
   
   .header__menu li a {
